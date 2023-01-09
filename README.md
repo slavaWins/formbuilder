@@ -25,14 +25,17 @@ composer require slavawins/formbuilder
  ```
     <script src="{{ asset('js/formbuilder/formBuilderHelper.js') }}"></script>
     <script src="{{ asset('js/formbuilder/InputValidatorValues.js') }}"></script>
-    <script src="{{ asset('js/formbuilder/InputValidatorValues.js') }}"></script>
+    <script src="{{ asset('js/formbuilder/ApprovedModalController.js') }}"></script>
  ```
+ApprovedModalController - стоит поместить вниз где footer. Что бы jquery успел прогрузится.
 
 ## Использваоние
 
 Открываете вью в котором хотите создать поля. И добавляете в нем зависимость
  ```
-     use PhpDie\Formbuilder\Library\FElement;
+@php
+    use SlavaWins\Formbuilder\Library\FElement;
+@endphp
  ```
 
 Затем в нужном месте пишете такой блок.
@@ -44,7 +47,7 @@ composer require slavawins/formbuilder
     FElement::NewInputTextRow()
         ->SetLabel("Лебл поля")
         ->SetName("amountPrice")
-        ->SetValue(old("amountPrice", $order->amountPrice))
+        ->SetValue(old("amountPrice", "test"))
         ->SetDescr("В какую суммы вы готовы уложится?")
         ->RenderHtml(true);
 @endphp
@@ -58,7 +61,7 @@ composer require slavawins/formbuilder
         ->SetLabel("Лебл поля")
         ->SetName("amountPrice")
         ->FrontendValidate()->Money()
-        ->SetValue(old("amountPrice", $order->amountPrice))
+        ->SetValue(old("amountPrice", "test"))
         ->SetDescr("В какую суммы вы готовы уложится?")
         ->RenderHtml(true);
 @endphp
@@ -73,7 +76,7 @@ composer require slavawins/formbuilder
      ->FrontendValidate()->String(15,120)
      ->SetPlaceholder("Например: Нужно отправить груз")
      ->SetDescr("Кратко опишите суть заказа")
-     ->SetValue(old("title", $order->title) )
+     ->SetValue(old("title", "Example text") )
      ->RenderHtml(true);
 @endphp
  ```
