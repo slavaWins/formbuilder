@@ -1,0 +1,52 @@
+<?php
+
+
+    namespace PhpDie\Formbuilder\Library\Struct;
+
+    use PhpDie\Formbuilder\Library\FElement;
+
+
+    class InputType extends VariantElement
+    {
+
+
+        /**
+         * @return FElement
+         */
+        public function Text() {
+            $this->felement->data->type = "text";
+
+            return $this->felement;
+        }
+
+
+        /**
+         * @return FElement
+         */
+        public function Number() {
+            $this->felement->data->type = "number";
+
+            return $this->felement;
+        }
+
+
+        /**
+         * @return FElement
+         */
+        public function Int() {
+            $this->felement->data->type = "int";
+
+            return $this->felement;
+        }
+
+        /**
+         * @return FElement
+         */
+        public function Date() {
+            $this->felement->data->type = "date";
+
+            return $this->felement;
+        }
+
+
+    }

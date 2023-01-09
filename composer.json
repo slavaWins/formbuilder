@@ -1,0 +1,27 @@
+{
+    "name": "phpdie/formbuilder",
+    "description": "Expa",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "phpDie",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PhpDie\\Formbuilder\\Providers\\FormbuilderServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpDie\\Formbuilder\\": "src"
+        }
+    }
+}
