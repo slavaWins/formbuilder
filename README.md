@@ -1,4 +1,8 @@
-![Logo](info/logo.png)
+<p align="center">
+<a href="https://laravel.com" target="_blank">
+<img src="info/logo.png">
+</a>
+</p>
 
 ## Form Builder
 Кароч изи пакет для инпутов. На основе ботсрапа.
