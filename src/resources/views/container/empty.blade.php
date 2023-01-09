@@ -1,5 +1,5 @@
 @php
-    /** @var $element \PhpDie\Formbuilder\Library\Struct\FData */
+    /** @var $element \SlavaWins\Formbuilder\Library\Struct\FData */
 @endphp
 
 <div class=" {{$element->class}}" id="id_{{$element->name}}">

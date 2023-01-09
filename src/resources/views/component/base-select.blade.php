@@ -1,5 +1,5 @@
 @php
-    /** @var $element \PhpDie\Formbuilder\Library\FElement */
+    /** @var $element \SlavaWins\Formbuilder\Library\FElement */
 @endphp
 
 <select class="form-control {{$element->class}}  @error($element->name) is-invalid @enderror" id="id_{{$element->name}}"

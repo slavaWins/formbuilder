@@ -1,12 +1,12 @@
 <?php
 
 
-    namespace PhpDie\Formbuilder\Library;
+    namespace SlavaWins\Formbuilder\Library;
 
-    use PhpDie\Formbuilder\Library\Struct\FBFrontendValidate;
-    use PhpDie\Formbuilder\Library\Struct\FData;
-    use PhpDie\Formbuilder\Library\Struct\InputType;
-    use PhpDie\Formbuilder\Library\Struct\ViewFElements;
+    use SlavaWins\Formbuilder\Library\Struct\FBFrontendValidate;
+    use SlavaWins\Formbuilder\Library\Struct\FData;
+    use SlavaWins\Formbuilder\Library\Struct\InputType;
+    use SlavaWins\Formbuilder\Library\Struct\ViewFElements;
 
 
     class FElement

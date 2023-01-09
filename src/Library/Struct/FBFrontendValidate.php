@@ -1,10 +1,10 @@
 <?php
 
 
-    namespace PhpDie\Formbuilder\Library\Struct;
+    namespace SlavaWins\Formbuilder\Library\Struct;
 
 
-    use PhpDie\Formbuilder\Library\FElement;
+    use SlavaWins\Formbuilder\Library\FElement;
 
 
     class FBFrontendValidate extends VariantElement

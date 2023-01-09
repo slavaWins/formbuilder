@@ -1,7 +1,7 @@
 <?php
 
 
-    namespace PhpDie\Formbuilder\Library\Struct;
+    namespace SlavaWins\Formbuilder\Library\Struct;
 
 
     class FData

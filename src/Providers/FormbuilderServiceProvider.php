@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpDie\Formbuilder\Providers;
+namespace SlavaWins\Formbuilder\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class FormbuilderServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'formbuilder');
 
         $this->publishes([
-            __DIR__.'/../resources/js' => public_path('js'),
+            __DIR__.'/../resources/js' => public_path('js/formbuilder'),
         ], 'public');
     }
 }

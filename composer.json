@@ -1,13 +1,13 @@
 {
-    "name": "phpdie/formbuilder",
+    "name": "slavawins/formbuilder",
     "description": "Expa",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
-            "name": "phpDie",
+            "name": "slavaWins",
             "email": "email@example.com",
-            "homepage": "https://github.com/phpDie/formbuilder"
+            "homepage": "https://github.com/slavaWins/formbuilder"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PhpDie\\Formbuilder\\Providers\\FormbuilderServiceProvider"
+                "SlavaWins\\Formbuilder\\Providers\\FormbuilderServiceProvider"
             ]
         }
     },

@@ -11,21 +11,21 @@
 ## Установка
 1) Установить из композера 
 ```  
-composer require phpdie/poli
+composer require slavawins/formbuilder
 ```
 
 2) Опубликовать js файлы необходимые для работы пакета.
 Вызывать команду:
    ```
-   php artisan vendor:publish --provider="PhpDie\Formbuilder\Providers\FormbuilderServiceProvider"
+   php artisan vendor:publish --provider="SlavaWins\Formbuilder\Providers\FormbuilderServiceProvider"
    ``` 
 После этого в папке public_html/js/ будут созданы 3 джс файла нужные для использования пакета
 
 3) Подключить js файлы в любом удобном месте. Можно просто в app.blade.php
  ```
-    <script src="{{ asset('js/formBuilderHelper.js') }}"></script>
-    <script src="{{ asset('js/InputValidatorValues.js') }}"></script>
-    <script src="{{ asset('js/InputValidatorValues.js') }}"></script>
+    <script src="{{ asset('js/formbuilder/formBuilderHelper.js') }}"></script>
+    <script src="{{ asset('js/formbuilder/InputValidatorValues.js') }}"></script>
+    <script src="{{ asset('js/formbuilder/InputValidatorValues.js') }}"></script>
  ```
 
 ## Использваоние

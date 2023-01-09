@@ -1,5 +1,5 @@
 @php
-    /** @var $element \PhpDie\Formbuilder\Library\FElement */
+    /** @var $element \SlavaWins\Formbuilder\Library\FElement */
 @endphp
 
 <div class="form-group row inpDiv__{{$element->name}}">
