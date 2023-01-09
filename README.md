@@ -1,13 +1,12 @@
 <p align="center">
-<a href="https://laravel.com" target="_blank">
 <img src="info/logo.png">
-</a>
 </p>
 
-## Form Builder
+## Form Builder 
 Кароч изи пакет для инпутов. На основе ботсрапа.
-
+  
 ![Example](info/ex.png)
+ 
 
 ## Установка
 1) Установить из композера 

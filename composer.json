@@ -6,7 +6,8 @@
     "authors": [
         {
             "name": "phpDie",
-            "email": "email@example.com"
+            "email": "email@example.com",
+            "homepage": "https://github.com/phpDie/formbuilder"
         }
     ],
     "require": {
