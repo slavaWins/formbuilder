@@ -3,8 +3,9 @@
 @endphp
 
 <div class="form-group  ">
-    <label for="id_{{$element->name}}" class=" col-form-label">{{$element->label}}</label>
-
+    @if($element->label<>null)
+        <label for="id_{{$element->name}}" class=" col-form-label">{{$element->label}}</label>
+    @endif
     @include("formbuilder::component.base-select")
     <small class="form-text text-muted">
         {{$element->descr}}

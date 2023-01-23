@@ -29,5 +29,8 @@ class FormbuilderServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/js' => public_path('js/formbuilder'),
         ], 'public');
+
+
+
     }
 }
