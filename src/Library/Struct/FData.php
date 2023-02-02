@@ -17,6 +17,7 @@
         public $class = "noclass";
         public $type = "text";
         public $value = null;
+        public $valueLikeAttr = null;
 
 
         /** @var null|string Валидация на js */

@@ -53,6 +53,13 @@
             $this->data->name = $val;
             return $this;
         }
+        /**
+         * @return FElement
+         */
+        public function AddValueAttributeCheckbox($val) {
+            $this->data->valueLikeAttr = $val;
+            return $this;
+        }
 
         /**
          * @return FElement
