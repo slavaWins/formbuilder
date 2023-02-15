@@ -187,8 +187,15 @@
             $element = $this->data;
             $element ->content = $innerHtml;
 
-            $viewInd = "formbuilder::".$element->view;
-            $viewInd= str_replace("formbuilder::formbuilder.", "formbuilder::",$viewInd);
+//            $viewInd = "formbuilder::".$element->view;
+            $viewInd = $element->view;
+            $viewInd= str_replace("formbuilder::", "",$viewInd);
+
+
+            if(!view()->exists($viewInd)){
+                $viewInd =    "formbuilder::".str_replace('formbuilder.','',$viewInd);
+            }
+
 
             $resHtml = view($viewInd, compact('element'))->render();
 

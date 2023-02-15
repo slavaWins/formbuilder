@@ -94,3 +94,19 @@ ApprovedModalController - стоит поместить вниз где footer. 
  ```
 @include("formbuilder::approved-modal")
  ```
+
+
+
+## Кастомизация.
+Создайте у себя:
+ ```
+resources\views\formbuilder\component
+ ```
+
+Скопируйте туда всё с:
+
+ ```
+vendor\slavawins\formbuilder\src\resources\views\component
+ ``` 
+
+Теперь вы можете кастомизировать элементы формы, прямо у себя в проекте. 
