@@ -41,7 +41,7 @@ InputValidatorValues.String = function (e, minLengh = 0, maxLengh = 999) {
         if (e.val().length > maxLengh) return "Поле должно содержать не более " + maxLengh + " символов!";
 
 
-            return true;
+        return true;
 
     }
 
@@ -167,34 +167,35 @@ InputValidatorValues.Base = function (e) {
     return self;
 }
 
+InputValidatorValues.list =[];
+
+InputValidatorValues.Add = function (e) {
+
+
+    var aMin = e.attr("InputValidatorValues-minlen") ?? 0;
+    var aMax = e.attr("InputValidatorValues-maxlen") ?? null;
+
+
+    switch (e.attr("InputValidatorValues")) {
+        case "Money":
+            InputValidatorValues.Money(e);
+            break;
+        case "Digital":
+            InputValidatorValues.Digital(e, aMin, aMax);
+            break;
+        case "String":
+            InputValidatorValues.String(e, aMin, aMax);
+            break;
+    }
+
+    e.attr("InputValidatorValues", null);
+}
+
 InputValidatorValues.Init = function () {
 
-    $(document).ready(function () {
-        //InputValidatorValues.Money($("#id_fee"));
-        // InputValidatorValues.Digital($("#id_customName"));
-
-        $('[InputValidatorValues]').each(function (index) {
-
-            var aMin = $(this).attr("InputValidatorValues-minlen") ?? 0;
-            var aMax = $(this).attr("InputValidatorValues-maxlen") ?? null;
-
-
-            switch ($(this).attr("InputValidatorValues")) {
-                case "Money":
-                    InputValidatorValues.Money($(this));
-                    break;
-                case "Digital":
-                    InputValidatorValues.Digital($(this), aMin, aMax);
-                    break;
-                case "String":
-                    InputValidatorValues.String($(this), aMin, aMax);
-                    break;
-            }
-
-        });
-
+    $('[InputValidatorValues]').each(function (index) {
+        InputValidatorValues.Add($(this));
     });
-
 };
 
 
@@ -228,4 +229,8 @@ $.fn.focusEnd = function () {
 
 window.InputValidatorValues = InputValidatorValues;
 
-window.InputValidatorValues.Init();
+$(document).ready(function () {
+    window.InputValidatorValues.Init();
+});
+
+
