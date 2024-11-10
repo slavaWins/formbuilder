@@ -72,6 +72,14 @@
         /**
          * @return FElement
          */
+        public function SetExampleModel($val) {
+            $this->data->exampleModelClass = $val;
+            return $this;
+        }
+
+        /**
+         * @return FElement
+         */
         public function SetDescr($val) {
             $this->data->descr = $val;
             return $this;

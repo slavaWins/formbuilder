@@ -41,6 +41,13 @@
             return $this->felement;
         }
 
+
+        public function ListGenericClass() {
+            $this->felement->data->view = "formbuilder.component.input-list-generic-class";
+
+            return $this->felement;
+        }
+
         public function InputTextRow() {
             $this->felement->data->view = "formbuilder.component.input-text-row";
 
@@ -70,6 +77,7 @@
 
             return $this->felement;
         }
+
 
 
     }

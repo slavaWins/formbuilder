@@ -11,6 +11,7 @@
 
         public $name = "not";
         public $placeholder = null;
+        public $exampleModelClass = null;
         public $content = "";
         public $label = null;
         public $descr = null;

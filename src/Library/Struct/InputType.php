@@ -48,5 +48,14 @@
             return $this->felement;
         }
 
+        /**
+         * @return FElement
+         */
+        public function ListGenericClass() {
+            $this->felement->data->type = "listGenericClass";
+
+            return $this->felement;
+        }
+
 
     }
