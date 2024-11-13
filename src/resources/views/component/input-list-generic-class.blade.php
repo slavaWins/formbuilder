@@ -55,9 +55,7 @@
                                         <option
                                             @if($item[$key] == $_k) selected @endif
                                         value="{{$_k}}"> {{$_v}} </option>
-                                    @endforeach
-                                    <option value="643626">Не валидный int</option>
-                                    <option value="asfasfs">Не валидный string</option>
+                                    @endforeach 
                                 </select>
                             </td>
                         @else
