@@ -8,10 +8,7 @@
    //$value = [];
    $attrList =    ReadAttributesConfig::ReadClass(  $element->exampleModelClass);
    $idRand = 'x'.rand(111,9999999);
-
-   function GetOptionsInList($struct) {
-        return $struct['Options'];
-    }
+   
 @endphp
 
 <div class="form-group  blankInputTextGrup blankInputTextGrupSelect mb-2 {{$idRand}}">
@@ -55,7 +52,7 @@
                                         <option
                                             @if($item[$key] == $_k) selected @endif
                                         value="{{$_k}}"> {{$_v}} </option>
-                                    @endforeach 
+                                    @endforeach
                                 </select>
                             </td>
                         @else
