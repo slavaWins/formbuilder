@@ -6,6 +6,7 @@
 <input type="checkbox"
        class="form-check-input {{$element->class}}  @error($element->name) is-invalid @enderror"
 
+       @if($element->visibleRule<>null) visiblerule_key="{{$element->visibleRule['key']}}" visiblerule_val="{{$element->visibleRule['val']}}" @endif
        name="{{$element->name}}"
 
        @if($element->valueLikeAttr)

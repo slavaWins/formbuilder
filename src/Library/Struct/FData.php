@@ -19,6 +19,7 @@
         public $type = "text";
         public $value = null;
         public $valueLikeAttr = null;
+        public $visibleRule = null;
 
 
         /** @var null|string Валидация на js */

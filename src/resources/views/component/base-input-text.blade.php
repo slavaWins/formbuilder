@@ -8,6 +8,7 @@
        id="id_{{$element->name}}"
        name="{{$element->name}}"
        value="{{$element->value}}"
+       @if($element->visibleRule<>null) visiblerule_key="{{$element->visibleRule['key']}}" visiblerule_val="{{$element->visibleRule['val']}}" @endif
        @if($element->placeholder<>null) placeholder="{{$element->placeholder}}" @endif
        @if($element->frontendValidate<>null) InputValidatorValues="{{$element->frontendValidate}}" @endif
        @if($element->frontendValidateMaxLen<>null) InputValidatorValues-maxlen="{{$element->frontendValidateMaxLen}}"
