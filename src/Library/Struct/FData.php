@@ -14,6 +14,8 @@
         public $exampleModelClass = null;
         public $content = "";
         public $label = null;
+        public $postfix = null;
+        public $prefix = null;
         public $descr = null;
         public $class = "noclass";
         public $type = "text";

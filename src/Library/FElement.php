@@ -49,6 +49,22 @@
         /**
          * @return FElement
          */
+        public function SetPrefix($val) {
+            $this->data->prefix = $val;
+            return $this;
+        }
+
+        /**
+         * @return FElement
+         */
+        public function SetPostfix($val) {
+            $this->data->postfix = $val;
+            return $this;
+        }
+
+        /**
+         * @return FElement
+         */
         public function SetName($val) {
             $this->data->name = $val;
             return $this;
@@ -204,6 +220,9 @@
                 $viewInd =    "formbuilder::".str_replace('formbuilder.','',$viewInd);
             }
 
+            if(!view()->exists($viewInd)){
+               return null;
+            }
 
             $resHtml = view($viewInd, compact('element'))->render();
 
