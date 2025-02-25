@@ -34,4 +34,21 @@ class BuildFormbuilderTest extends TestCase
 
     }
 
+
+    public function test_FrontendMask()
+    {
+        $this->withViewErrors([]);
+
+        $element =  FElement::NewInputText()
+            ->SetDataMask("0-XX")
+            ->SetName("game")->SetLabel("LabXX");
+
+        $html = $element->RenderHtml(false);
+        $this->assertStringContainsString("0-XX", $html);
+
+
+
+
+    }
+
 }
