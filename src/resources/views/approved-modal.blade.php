@@ -5,6 +5,7 @@
 
 
             <h5 class=" " id="modalApprovedTitle">??</h5>
+            <p class=" " id="modalApprovedDescr"></p>
 <BR>
             <div class="row m-0" style="    gap: 0.5em;">
                 <div class="col p-0">

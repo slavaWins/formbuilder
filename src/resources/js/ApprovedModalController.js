@@ -9,10 +9,13 @@ ApprovedModalController.New = function (e) {
     self.url = e.attr('href');
     e.attr('href', "#")
     self.title = e.attr('approvedModal');
+    self.descr = e.attr('approvedModal-descr');
 
     self.Click = function (e) {
         $("#modalApproved").modal('show');
         $("#modalApprovedTitle").text(self.title);
+        $("#modalApprovedDescr").text(self.descr);
+
         $(".modalApprovedHrefElement").attr("href", self.url);
     };
 
