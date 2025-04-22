@@ -8,15 +8,17 @@
    //$value = [];
    $attrList =    ReadAttributesConfig::ReadClass(  $element->exampleModelClass);
    $idRand = 'x'.rand(111,9999999);
-   
+
+
+
 @endphp
 
-<div class="form-group  blankInputTextGrup blankInputTextGrupSelect mb-2 {{$idRand}}">
+<div class="form-group  blankInputTextGrup blankInputTextGrup_GenericList blankInputTextGrup_GenericList_{{$element->name}} blankInputTextGrupSelect mb-2 {{$idRand}}">
 
     <label class=" col-form-label">{{$element->label ?? "NA"}}</label>
 
 
-    <table class="table">
+    <table class="table table_GenericList">
         <tr style="font-size: 0.9em;">
             <td>   <BR>
                 <small> Порядок </small>
@@ -40,7 +42,12 @@
                     @if(isset($item['__templateData']))  style="display: none;" @endif >
 
                     <td>
-                        <a  style="cursor: pointer" onclick="InputListGenericClassAction_MoveUp(this)"> ⬆️</a>
+                        <a  style="cursor: pointer" onclick="InputListGenericClassAction_MoveUp(this)">
+                            <svg width="23"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29289 10.7071C3.90237 10.3166 3.90237 9.68342 4.29289 9.29289L11.2929 2.29289C11.6834 1.90237 12.3166 1.90237 12.7071 2.29289L19.7071 9.29289C20.0976 9.68342 20.0976 10.3166 19.7071 10.7071C19.3166 11.0976 18.6834 11.0976 18.2929 10.7071L13 5.41421L13 21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21L11 5.41421L5.70711 10.7071C5.31658 11.0976 4.68342 11.0976 4.29289 10.7071Z" fill="white"/>
+                            </svg>
+
+                        </a>
                     </td>
 
                     @foreach($attrList as $key=>$struct)
@@ -80,7 +87,7 @@
         @endforeach
         </tbody>
     </table>
-    <a class="btn  btn-primary " onclick="InputListGenericClassAction_AddRow('.{{$idRand}}')"> + Добавить  </a>
+    <a class="btn  btn-primary _btnAdd " onclick="InputListGenericClassAction_AddRow('.{{$idRand}}')"> + Добавить строчку  </a>
 
     <small class="form-text text-muted">
         Описание поля
