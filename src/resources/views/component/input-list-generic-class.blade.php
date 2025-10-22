@@ -53,7 +53,7 @@
                     @foreach($attrList as $key=>$struct)
                         @if(isset($struct['Options']))
                             <td>
-                                <select type="text" class="form-control noclass is-invalid" id="id_message"
+                                <select type="text" class="form-control noclass" id="id_message"
                                         name="{{(isset($item['__templateData'])  ? "__templateKey__" : "").$element->name .'__'.$key.'[]'}}">
                                     @foreach($struct['Options'] as $_k=>$_v)
                                         <option
@@ -64,7 +64,7 @@
                             </td>
                         @else
                             <td>
-                                <input type="text" class="form-control noclass is-invalid" id="id_message"
+                                <input type="text" class="form-control noclass" id="id_message"
                                        name="{{(isset($item['__templateData'])  ? "__templateKey__" : "").$element->name .'__'.$key.'[]'}}"
                                        value="{{$item[$key]}}"
                                        inputvalidatorvalues="String"
