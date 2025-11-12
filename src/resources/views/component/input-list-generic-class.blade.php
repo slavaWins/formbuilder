@@ -66,7 +66,7 @@
                             <td>
                                 <input type="text" class="form-control noclass" id="id_message"
                                        name="{{(isset($item['__templateData'])  ? "__templateKey__" : "").$element->name .'__'.$key.'[]'}}"
-                                       value="{{$item[$key]}}"
+                                       value="{{$item[$key] ?? $struct['DefaultValue'] ?? 0}}"
                                        inputvalidatorvalues="String"
                                        @if(isset($struct['Lengh']))
                                            inputvalidatorvalues-maxlen="{{$struct['Lengh'][1]}}"
