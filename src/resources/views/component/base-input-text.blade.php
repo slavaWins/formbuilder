@@ -10,11 +10,10 @@
        value="{{$element->value}}"
        @if($element->visibleRule<>null) visiblerule_key="{{$element->visibleRule['key']}}" visiblerule_val="{{$element->visibleRule['val']}}" @endif
        @if($element->placeholder<>null) placeholder="{{$element->placeholder}}" @endif
+
        @if($element->frontendValidate<>null) InputValidatorValues="{{$element->frontendValidate}}" @endif
-       @if($element->frontendValidateMaxLen<>null) InputValidatorValues-maxlen="{{$element->frontendValidateMaxLen}}"
-       @endif
-       @if($element->frontendValidateMinLen<>null) InputValidatorValues-minlen="{{$element->frontendValidateMinLen}}"
-       @endif
+       @if($element->frontendValidateMaxLen<>null) InputValidatorValues-maxlen="{{$element->frontendValidateMaxLen}}"       @endif
+       @if($element->frontendValidateMinLen<>null) InputValidatorValues-minlen="{{$element->frontendValidateMinLen}}"       @endif
        @if($element->dataMask) data-mask="{{$element->dataMask}}" @endif
        @if($element->dataMaskReverse) data-mask-reverse="true" @endif
 >

@@ -42,4 +42,23 @@
             return $this->felement;
         }
 
+        /**
+         * @return FElement
+         */
+        public function Custom($v) {
+            $this->felement->data->frontendValidate = $v;
+
+            return $this->felement;
+        }
+
+
+        /**
+         * @return FElement
+         */
+        public function InnAny() {
+            $this->felement->data->frontendValidate = "InnAny";
+
+            return $this->felement;
+        }
+
     }
