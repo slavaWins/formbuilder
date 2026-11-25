@@ -110,3 +110,51 @@ vendor\slavawins\formbuilder\src\resources\views\component
  ``` 
 
 Теперь вы можете кастомизировать элементы формы, прямо у себя в проекте. 
+
+
+## Документация
+
+Fluent-построитель Bootstrap-полей для Blade. На нём держится вывод форм в mrproperter и adminwinda.
+
+### Подключение
+```
+php artisan vendor:publish --provider="SlavaWins\Formbuilder\Providers\FormbuilderServiceProvider"
+```
+```blade
+<script src="{{ asset('js/formbuilder/formBuilderHelper.js') }}"></script>
+<script src="{{ asset('js/formbuilder/InputValidatorValues.js') }}"></script>
+<script src="{{ asset('js/formbuilder/ApprovedModalController.js') }}"></script> {{-- в конце, после jQuery --}}
+@include('formbuilder::approved-modal')
+```
+
+### Пример
+```php
+use SlavaWins\Formbuilder\Library\FElement;
+
+FElement::NewInputTextRow()
+    ->SetLabel('Название')->SetName('title')
+    ->SetPlaceholder('Например: …')->SetDescr('Кратко')
+    ->FrontendValidate()->String(15, 120)
+    ->SetValue(old('title', $model->title))
+    ->RenderHtml(true);           // true = echo, иначе вернёт строку
+```
+
+### API `FElement`
+- Фабрики: `New()`, `NewInputText()`, `NewInputTextRow()`.
+- Данные: `SetLabel`, `SetName`, `SetValue`, `SetPlaceholder`, `SetDescr`, `SetClass`, `SetPrefix`, `SetPostfix`, `SetDataMask($mask, $reverse)`, `AddOption($k, $text, $selected)`, `AddOptionFromArray($arr, $selectedKey)`, `AddValueAttributeCheckbox($v)`, `SetExampleModel($class)`, `CheckboxAttachHideDiv($checkboxName, $reverse)`.
+- Вид, `SetView()->…`: `InputText`, `InputTextRow`, `InputBoolRow`, `InputSelect`, `InputSelectRow`, `BtnSubmit`, `H`, `Tabs`, `ListGenericClass`, `ContainerEmptyHtml`, `ContainerCardSettings`.
+- Тип `<input>`, `SetType()->…`: `Text`, `Number`, `Int`, `Date`, `ListGenericClass`.
+- JS-валидация, `FrontendValidate()->…`: `String($min,$max)`, `Digital($min,$max)`, `Money()`, `InnAny()`, `Custom($name)`.
+- Вложенность: `$card->NewElement()` / `$card->AddElement($el)`. Дочерние элементы рендерятся внутрь контейнера.
+- `SetForm($url, $method)` оборачивает результат в `<form>` c `@csrf` (и `_method` для PUT/PATCH/DELETE); url и method экранируются.
+
+### Модалка подтверждения
+```html
+<a href="/page" approvedModal="Перейти?">Перейти</a>                              <!-- GET-переход -->
+<a href="/delete/5" approvedModal="Точно удалить?" approvedModal-method="POST">Удалить</a>
+<a href="/item/5" approvedModal="Удалить?" approvedModal-method="DELETE">Удалить</a>   <!-- POST + _method -->
+```
+Для не-GET методов отправляется скрытая форма с `_token` из `<meta name="csrf-token">`. Изменяющие действия делайте только так, а не GET-ссылкой.
+
+### Кастомизация
+Скопируйте `vendor/slavawins/formbuilder/src/resources/views/component` в `resources/views/formbuilder/component`. Сначала ищется вьюха проекта, потом пакетная `formbuilder::`.

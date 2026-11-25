@@ -227,8 +227,15 @@
             $resHtml = view($viewInd, compact('element'))->render();
 
             if($this->data->formData_Link<>null){
-                $resHtml='<form method="'.$this->data->formData_Method.'" action="'.$this->data->formData_Link.'">' . $resHtml;
-                $resHtml=$resHtml . '</form>';
+                $method = strtoupper((string)($this->data->formData_Method ?: 'POST'));
+                $htmlMethod = $method === 'GET' ? 'GET' : 'POST';
+                $hidden = '';
+                if ($htmlMethod === 'POST') {
+                    $hidden .= csrf_field();
+                    if ($method !== 'POST') $hidden .= method_field($method); // PUT / PATCH / DELETE
+                }
+                $resHtml = '<form method="' . e($htmlMethod) . '" action="' . e($this->data->formData_Link) . '">' . $hidden . $resHtml;
+                $resHtml = $resHtml . '</form>';
             }
 
             if($isEcho){
